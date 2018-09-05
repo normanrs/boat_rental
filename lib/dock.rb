@@ -17,8 +17,10 @@ class Dock
 	end
 
 	def log_hour
-		rentals.map do |rental|
-			rental.boat.add_hour
+			rentals.map do |rental|
+				if rental.returned == false && rental.boat.hours_rented < max_rental_time
+					rental.boat.add_hour
+			end
 		end
 	end
 
