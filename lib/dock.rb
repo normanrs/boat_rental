@@ -28,4 +28,12 @@ class Dock
 		end
 	end
 
+	def revenue
+		rentals.sum do |rental|
+			rental.boat.price_per_hour * rental.boat.hours_rented
+		end
+	end
+
+
+
 end
