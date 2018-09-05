@@ -22,4 +22,10 @@ class Dock
 		end
 	end
 
+	def return(boat)
+		rentals.map do |rental|
+			rental.swap_returned
+		end
+	end
+
 end
