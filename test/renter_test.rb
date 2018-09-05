@@ -22,5 +22,4 @@ class RenterTest <  Minitest::Test
     assert_equal expected, actual
   end
 
-
 end

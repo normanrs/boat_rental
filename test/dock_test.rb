@@ -1,33 +1,23 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/boat.rb'
+require './lib/dock.rb'
 
-class BoatTest <  Minitest::Test
+class DockTest <  Minitest::Test
   def test_it_exists
-    kayak = Boat.new(:kayak, 20)
-    assert_instance_of Boat, kayak
+    dock = Dock.new("The Rowing Dock", 3)
+    assert_instance_of Dock, dock
   end
 
-  def test_it_has_type
-    kayak = Boat.new(:kayak, 20)
-    actual = kayak.type
-    expected = :kayak
+  def test_it_has_a_name
+    dock = Dock.new("The Rowing Dock", 3)
+    actual = dock.name
+    expected = "The Rowing Dock"
     assert_equal expected, actual
   end
 
-  def test_it_has_price_per_our
-    kayak = Boat.new(:kayak, 20)
-    actual = kayak.price_per_hour
-    expected = 20
-    assert_equal expected, actual
-  end
-
-  def test_it_can_add_a_rented_hours
-    kayak = Boat.new(:kayak, 20)
-    kayak.add_hour
-    kayak.add_hour
-    kayak.add_hour
-    actual = kayak.hours_rented
+  def test_it_has_a_max_rental_time
+    dock = Dock.new("The Rowing Dock", 3)
+    actual = dock.max_rental_time
     expected = 3
     assert_equal expected, actual
   end
